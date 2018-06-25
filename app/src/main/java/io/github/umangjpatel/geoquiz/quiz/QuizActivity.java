@@ -2,11 +2,11 @@ package io.github.umangjpatel.geoquiz.quiz;
 
 import android.arch.lifecycle.ViewModelProviders;
 import android.os.Bundle;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.AppCompatButton;
 import android.support.v7.widget.AppCompatTextView;
 import android.view.View;
-import android.widget.Toast;
 
 import io.github.umangjpatel.geoquiz.R;
 
@@ -49,9 +49,9 @@ public class QuizActivity extends AppCompatActivity {
 
     private void checkCorrectAnswer(boolean userPressedTrue) {
         boolean isAnswerCorrect = mQuizViewModel.checkAnswer(userPressedTrue);
-        Toast.makeText(this,
-                isAnswerCorrect ? R.string.true_button_label : R.string.false_button_label,
-                Toast.LENGTH_SHORT).show();
+        Snackbar.make(findViewById(R.id.quiz_coordinator_layout), isAnswerCorrect ?
+                R.string.true_button_label :
+                R.string.false_button_label, Snackbar.LENGTH_SHORT).show();
         updateUI();
     }
 

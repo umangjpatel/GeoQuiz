@@ -1,63 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/quiz_coordinator_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
-    android:orientation="vertical"
     tools:context=".quiz.QuizActivity">
 
-    <android.support.v7.widget.AppCompatTextView
-        android:id="@+id/question_text_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:padding="16dp"
-        android:text="@string/question_australia"
-        android:textColor="@android:color/black"
-        android:textSize="16sp" />
-
     <android.support.v7.widget.LinearLayoutCompat
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:orientation="horizontal">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
 
-        <android.support.v7.widget.AppCompatButton
-            android:id="@+id/true_button"
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/question_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="checkAnswer"
-            android:text="@string/true_button_label" />
+            android:gravity="center_horizontal"
+            android:padding="16dp"
+            android:text="@string/question_australia"
+            android:textColor="@android:color/black"
+            android:textSize="16sp" />
 
-        <android.support.v7.widget.AppCompatButton
-            android:id="@+id/false_button"
+        <android.support.v7.widget.LinearLayoutCompat
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="checkAnswer"
-            android:text="@string/false_button_label" />
+            android:layout_marginBottom="8dp"
+            android:orientation="horizontal">
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/true_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="checkAnswer"
+                android:text="@string/true_button_label" />
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/false_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="checkAnswer"
+                android:text="@string/false_button_label" />
+
+        </android.support.v7.widget.LinearLayoutCompat>
+
+        <android.support.v7.widget.LinearLayoutCompat
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <android.support.v7.widget.AppCompatImageButton
+                android:id="@+id/prev_question_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="previousQuestion"
+                android:src="@drawable/ic_navigate_prev" />
+
+            <android.support.v7.widget.AppCompatImageButton
+                android:id="@+id/next_question_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="nextQuestion"
+                android:src="@drawable/ic_navigate_next" />
+
+        </android.support.v7.widget.LinearLayoutCompat>
 
     </android.support.v7.widget.LinearLayoutCompat>
 
-    <android.support.v7.widget.LinearLayoutCompat
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
 
-        <android.support.v7.widget.AppCompatImageButton
-            android:id="@+id/prev_question_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="previousQuestion"
-            android:src="@drawable/ic_navigate_prev" />
-
-        <android.support.v7.widget.AppCompatImageButton
-            android:id="@+id/next_question_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="nextQuestion"
-            android:src="@drawable/ic_navigate_next" />
-
-    </android.support.v7.widget.LinearLayoutCompat>
-
-</android.support.v7.widget.LinearLayoutCompat>
+</android.support.design.widget.CoordinatorLayout>
