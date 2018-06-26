@@ -45,4 +45,16 @@ public class QuizViewModel extends ViewModel {
     private void setQuestionAnswered() {
         mQuestions.get(mQuestionIndex).setAnswered();
     }
+
+    public boolean getQuestionAnswer() {
+        return mQuestions.get(mQuestionIndex).isAnswerTrue();
+    }
+
+    public boolean getQuestionCheated() {
+        return mQuestions.get(mQuestionIndex).isCheated();
+    }
+
+    public void setQuestionCheated(boolean wasAnswerShown) {
+        mQuestions.get(mQuestionIndex).setCheated(wasAnswerShown);
+    }
 }

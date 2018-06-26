@@ -3,9 +3,9 @@ package io.github.umangjpatel.geoquiz.utils;
 public class Question {
 
     private int mQuestionResId;
-    private boolean mAnswerTrue, mIsAnswered;
+    private boolean mAnswerTrue, mIsAnswered, mIsCheated;
 
-    public Question(int questionResId, boolean answerTrue) {
+    Question(int questionResId, boolean answerTrue) {
         mQuestionResId = questionResId;
         mAnswerTrue = answerTrue;
         mIsAnswered = false;
@@ -25,5 +25,13 @@ public class Question {
 
     public void setAnswered() {
         mIsAnswered = true;
+    }
+
+    public boolean isCheated() {
+        return mIsCheated;
+    }
+
+    public void setCheated(boolean cheated) {
+        mIsCheated = cheated;
     }
 }

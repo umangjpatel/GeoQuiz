@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".quiz.QuizActivity">
 
-    <android.support.v7.widget.LinearLayoutCompat
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
@@ -16,6 +16,7 @@
             android:id="@+id/question_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|top"
             android:gravity="center_horizontal"
             android:padding="16dp"
             android:text="@string/question_australia"
@@ -25,7 +26,7 @@
         <android.support.v7.widget.LinearLayoutCompat
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
+            android:layout_gravity="center"
             android:orientation="horizontal">
 
             <android.support.v7.widget.AppCompatButton
@@ -44,36 +45,36 @@
 
         </android.support.v7.widget.LinearLayoutCompat>
 
+
+        <android.support.v7.widget.AppCompatImageButton
+            android:id="@+id/prev_question_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|start"
+            android:layout_margin="16dp"
+            android:onClick="previousQuestion"
+            android:src="@drawable/ic_navigate_prev" />
+
+        <android.support.v7.widget.AppCompatImageButton
+            android:id="@+id/next_question_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|end"
+            android:layout_margin="16dp"
+            android:onClick="nextQuestion"
+            android:src="@drawable/ic_navigate_next" />
+
         <android.support.v7.widget.AppCompatButton
             android:id="@+id/cheat_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
+            android:layout_gravity="center_horizontal|bottom"
+            android:layout_margin="16dp"
             android:onClick="cheatQuestion"
             android:text="@string/cheat_button_label" />
 
-        <android.support.v7.widget.LinearLayoutCompat
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
 
-            <android.support.v7.widget.AppCompatImageButton
-                android:id="@+id/prev_question_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:onClick="previousQuestion"
-                android:src="@drawable/ic_navigate_prev" />
-
-            <android.support.v7.widget.AppCompatImageButton
-                android:id="@+id/next_question_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:onClick="nextQuestion"
-                android:src="@drawable/ic_navigate_next" />
-
-        </android.support.v7.widget.LinearLayoutCompat>
-
-    </android.support.v7.widget.LinearLayoutCompat>
+    </FrameLayout>
 
 
 </android.support.design.widget.CoordinatorLayout>
